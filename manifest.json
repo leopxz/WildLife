@@ -65,7 +65,8 @@
       {
         "src": "assets/img/AppIcons/AssetsApp/AppIconSet/144.png",
         "sizes": "144x144",
-        "type": "image/png"
+        "type": "image/png",
+        "purpose": "any"
       },
       {
         "src": "assets/img/AppIcons/AssetsApp/AppIconSet/256.png",
