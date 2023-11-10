@@ -77,7 +77,7 @@
         "src": "assets/img/AppIcons/AssetsApp/AppIconSet/512.png",
         "sizes": "512x512",
         "type": "image/png",
-        "purpose": "maskable any"
+        "purpose": "maskable"
       }
     ],
     "splash_pages": null,
