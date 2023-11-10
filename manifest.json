@@ -80,7 +80,8 @@
     {
         "src": "assets/img/AppIcons/AssetsApp/AppIconSet/144.png",
         "sizes": "144x144",
-        "type": "image/png"
+        "type": "image/png",
+        "purpose": "any"
         
     },
     
@@ -94,7 +95,7 @@
         "src": "assets/img/AppIcons/AssetsApp/AppIconSet/512.png",
         "sizes": "512x512",
         "type": "image/png",    
-        "purpose": "any maskable"
+        "purpose": "maskable"
     }
     ],
     "splash_pages": null,
