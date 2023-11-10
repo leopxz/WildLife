@@ -1,4 +1,5 @@
-Thanks for downloading this template!
+Criação de uma plataforma versão web e mobile com o intuito de facilitar e trazer praticidade a vida animal.
+
 
 Template Name: Mentor
 Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
