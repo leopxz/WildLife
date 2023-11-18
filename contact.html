@@ -54,9 +54,8 @@
                 <nav id="navbar" class="navbar order-last order-lg-0">
                     <ul>
                         <li><a class="active" href="index.html">Inicio</a></li>          
-                        <li><a href="cadastroanimal.html">Cadastrar Animal</a></li>
+                        <li><a href="cadastroanimal2.html"><strong>Cadastrar Animal</strong></a></li>
                         <li><a href="courses.html">Informações Animais</a></li>
-                        <li><a href="dados.html">Certificados</a></li>
                         <li><a href="Rank.html">Ranking</a></li>
                         <li><a href="about.html">Sobre</a></li>
                     </ul>
@@ -64,7 +63,7 @@
                 </nav>
                 <!-- .navbar -->
 
-                <a href="courses.html" class="get-started-btn">Bem vindo, Antonia!</a>
+                <a href="courses.html" class="get-started-btn">Bem vindo!</a>
 
             </div>
         </header>
@@ -149,47 +148,42 @@
                                 <div class="address">
                                     <i class="bi bi-alphabet-uppercase"></i>
                                     <h4>Nome:</h4>
-                                    <p>Antonia Clementina da Silva</p>
+                                    <p><span id="spannome"></span></p>
                                 </div>
-                                <br>
                                 
-
-                                <div class="email">
-                                    <i class="bi bi-envelope"></i>
-                                    <h4>Email:</h4>
-                                    <p>antoniastart@gmail.com</p>
+                                
+<br>
+                                <div class="usuario">
+                                    <i class="bi bi-alphabet-uppercase"></i>
+                                    <h4>Nome Usuário:</h4>
+                                    <p><span id="spannomeUsuario"></span></p>
                                 </div>
 
                                 <div class="phone">
-                                    <i class="bi bi-phone"></i>
-                                    <h4>Telefone:</h4>
-                                    <p>+55 81 99834-2356</p>
+                                    <i class="bi bi-cake2"></i>
+                                    <h4>Data Nascimento:</h4>
+                                    <p><span id="spandataNascimento"></span></p>
                                 </div>
                                 
-                                <br>
-                                <div class="status">
-                                    <i class="bi bi-arrow-through-heart"></i>
-                                    <h4>Estado Civil:</h4>
-                                    <p>Casada</p>
+                                <div class="email">
+                                    <i class="bi bi-envelope"></i>
+                                    <h4>Email:</h4>
+                                    <p><span id="spanemail"></span></p>
                                 </div>
-                                <br>
-                                <div class="empresa">
-                                    <i class="bi bi-buildings"></i>
-                                    <h4>Orgão:</h4>
-                                    <p>Ibama</p>
+                            
+                                    <div class="phone">
+                                    <i class="bi bi-phone"></i>
+                                    <h4>Telefone:</h4>
+                                    <p><span id="spantelefone"></span></p>
                                 </div>
                                 <br>
                                 <div class="setor">
                                     <i class="bi bi-display"></i>
                                     <h4>Cargo:</h4>
-                                    <p>Analista Ambiental</p>
+                                    <p><span id="spancargo"></span></p>
                                 </div>
                                 <br>
-                                <div class="setor">
-                                    <i class="bi bi-cake2"></i>
-                                    <h4>Data Nascimento:</h4>
-                                    <p>24/12/1993</p>
-                                </div>
+                               
 
                             </div>
 
@@ -221,6 +215,29 @@
                                 <strong>
                                     <span>Wild Life</span></strong>. All Rights Reserved.
                             </div>
+
+
+                  <script>
+                       
+                // Recuperar as informações do localStorage 
+         
+        var nomeSalvo = localStorage.getItem("nome");
+        var nomeUsuarioSalvo = localStorage.getItem("nomeUsuario");
+        var dataNascimentoSalvo= localStorage.getItem("dataNascimento");
+        var emailSalvo = localStorage.getItem("email");
+        var telefoneSalvo = localStorage.getItem("telefone");
+        var cargoSalvo = localStorage.getItem("cargo");
+
+         // Exibir as informações na página
+         
+        document.getElementById("spannome").innerText = nomeSalvo;
+        document.getElementById("spannomeUsuario").innerText = nomeUsuarioSalvo;
+        document.getElementById("spandataNascimento").innerText = dataNascimentoSalvo;
+        document.getElementById("spanemail").innerText = emailSalvo;
+        document.getElementById("spantelefone").innerText = telefoneSalvo;
+        document.getElementById("spancargo").innerText = cargoSalvo;
+                 </script>
+
                             <div class="credits">
                                 <!-- All the links in the footer should remain intact. -->
                                 <!-- You can delete the links only if you purchased the pro version. -->

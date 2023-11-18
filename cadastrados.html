@@ -5,9 +5,11 @@
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-        <title>Login</title>
+        <title>Cadastrado com Sucesso!</title>
         <meta content="" name="description">
         <meta content="" name="keywords">
+        <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
       <!-- Favicons -->
    <link href="assets/img/logo.png" rel="icon">
@@ -69,36 +71,28 @@
                 
                 <main id="main">
                     <div class="login-container text-align-center">
-                        <h5>Informações Gerais</h5>
+                        <h1>Informações Gerais</h1>
                         <div class="info-section">
-                            <div class="info-label"><p><strong>Nome do Animal:</strong><br> Tucano</p></div>
-                            <div class="info-label"><p><strong>Nome Científico:</strong><br> Tucanis</p></div>
-                        </div>
-                       
-                        <div class="info-section">
-                            <div class="info-label"><strong>Sexo:</strong><br> Macho</div>
-                            <div class="info-label"><strong>Onde Foi Encontrado:</strong><br> BR-232</div>
-                        </div>
+                           
+                            <p><strong>Doc. Identificação:</strong> <span id="spandocIdentificacao"></span></p>
+                            <p><strong> Data e Hora:</strong> <span id="spanDatetimeLocal"></span></p>
+                            <p><strong>Responsável pela Entrega:</strong> <span id="spanresponsavelEntrega"></span></p>
+                            <p><strong>Tipo de Entrega:</strong> <span id="spantipoEntrega"></span></p>
+                            <p><strong>Nome:</strong><span id="spanNome"></span></p>
+                            <p><strong>Nome Científico:</strong> <span id="spanCientifico"></span></p>
+                            <p><strong>Sexo:</strong><span id="spanSexo"></span></p>
+                            <p><strong>Local Encontrado:</strong> <span id="spanEncontrado"></span></p>
+                            <p><strong>Local do Cativeiro:</strong> <span id="spanCativeiro"></span></p>
+                            <p><strong>Tempo de Cativeiro:</strong><span id="spanTempoCativeiro"></span></p>
+                            <p><strong>Estado de Saúde:</strong> <span id="spanEstadoSaude"></span></p>
+                            <p><strong>Entregue Por:</strong><span id="spanEntreguePor"></span></p>
+                            <p><strong>Recebido Por:</strong><span id="spanRecebidoPor"></span></p>
 
-                        <div class="info-section">
-                            <div class="info-label"><strong>Local de Cativeiro:</strong><br> Zoo Dois Irmãos</div>
-                            <div class="info-label"><strong>Tempo de Cativeiro:</strong><br> Indefinido</div>
-                        </div>
-
-                        <div class="info-section">
-                            <div class="info-label"><strong>Estado de Saúde:</strong><br> Precisa de cuidados medicos</div>
-                            <div class="info-label"><strong>Observações sobre o Animal:</strong> <br>Chegou atropelado</div>
-                        </div>
-
-                        <div class="info-section">
-                            <div class="info-label"><strong>Entregue Por:</strong><br> Antonia Maria</div>
-                            <div class="info-label"><strong>Recebido Por:</strong> <br>Luiz Neto</div>
-                        </div>
+                            <a href="cadastroanimal2.html" download class="get-started-btn download-button">Cadastrar Outro Animal</a><br><br>
+                            <button id="btGerarPDF" onclick="gerarPDF()">Baixar PDF</button>
 
 
-                    </div>
-                </main>
-
+                            
             <!-- Vendor JS Files -->
             <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
             <script src="assets/vendor/aos/aos.js"></script>
@@ -109,9 +103,62 @@
             <!-- Template Main JS File -->
             <script src="assets/js/main.js"></script>
            
+            <script>
+                // Recuperar as informações do localStorage 
+         
+        var docIdentificacaoSalvo = localStorage.getItem("docIdentificacao");
+        var datetimeLocalSalvo = localStorage.getItem("datetimeLocal");
+        var responsavelEntregaSalvo= localStorage.getItem("responsavelEntrega");
+        var tipoEntregaSalvo = localStorage.getItem("tipoEntrega");
+        var nomeSalvo = localStorage.getItem("nome");
+        var cientificoSalvo = localStorage.getItem("cientifico");
+        var sexoSalvo = localStorage.getItem("sexo");
+        var encontradoSalvo = localStorage.getItem("encontrado");
+        var cativeiroSalvo = localStorage.getItem("cativeiro");
+        var tempoCativeiroSalvo = localStorage.getItem("tempoCativeiro");
+        var estadoSaudeSalvo = localStorage.getItem("estadoSaude");
+        var entreguePorSalvo= localStorage.getItem("entreguePor");
+        var recebidoPorSalvo= localStorage.getItem("recebidoPor");
+     
+        // Exibir as informações na página
+         
+        document.getElementById("spandocIdentificacao").innerText = docIdentificacaoSalvo;
+        document.getElementById("spanDatetimeLocal").innerText = datetimeLocalSalvo;
+        document.getElementById("spanresponsavelEntrega").innerText = responsavelEntregaSalvo;
+        document.getElementById("spantipoEntrega").innerText = tipoEntregaSalvo;
+        document.getElementById("spanNome").innerText = nomeSalvo;
+        document.getElementById("spanCientifico").innerText = cientificoSalvo;
+        document.getElementById("spanSexo").innerText = sexoSalvo;
+        document.getElementById("spanEncontrado").innerText = encontradoSalvo;
+        document.getElementById("spanCativeiro").innerText = cativeiroSalvo;
+        document.getElementById("spanTempoCativeiro").innerText = tempoCativeiroSalvo;
+        document.getElementById("spanEstadoSaude").innerText = estadoSaudeSalvo;
+        document.getElementById("spanEntreguePor").innerText = entreguePorSalvo;
+        document.getElementById("spanRecebidoPor").innerText = recebidoPorSalvo;
+              
+        
+        // Configurações do PDF (tamanho, orientação, etc.)
+         
+        var doc = new jsPDF();
+var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+        return true;
+    }
+};
 
-        </body>
 
+function gerarPDF() {
+    var element = document.getElementById("main");
+    html2pdf(element).then(function (pdf) {
+        var a = document.createElement("a");
+        a.href = pdf.output('bloburl');
+        a.download = 'exemplo-pdf.pdf';
+        
+        a.click();
+    });
+}
+            </script>
+            
         <style>
           h1 {
             color: #000000;
@@ -125,13 +172,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            direction: ltr; /* Configuração para texto da esquerda para a direita */
+            min-height: 100vh;
+            direction: ltr; 
         }
 
         .login-container {
             background-color: #fff;
-            padding: 20px; /* Reduzi o padding para melhor visualização em um espaço pequeno */
+            padding: 20px; 
             border-radius: 20px;
             box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
             width: 300px;
@@ -140,10 +187,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            
         }
 
-        h2 {
-            margin-top: 0;
+        h1   {
+            margin-top: auto 0;
         }
 
         .text-align-right {
@@ -151,5 +199,5 @@
         }
             
         </style>
-
-    </html>
+    </body>
+</html>
