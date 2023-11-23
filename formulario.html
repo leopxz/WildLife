@@ -29,13 +29,7 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Mentor
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  
 </head>
 
 <body>
@@ -44,57 +38,58 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
+      <!--logo-->
       <h1 class="logo me-auto"><a href="index.html">Wild<br>Life</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
+      
+      <!--Menu-->
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="active" href="index.html">Inicio</a></li>          
-          <li><a href="courses.html">Informações Animais</a></li>
+          <li><a href="infoAnimais.html">Informações Animais</a></li>
           <li><a href="Rank.html">Ranking</a></li>
-          <li><a href="about.html">Sobre</a></li>
+          <li><a href="sobreNos.html">Sobre</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      </nav>
 
       
 
     </div>
-  </header><!-- End Header -->
+  </header>
+  <!-- End Header -->
 
   <main id="main">
-
-    
-    
     <br><br><br><br><br>
+    
+    <!--Dados cadastrais-->
     <h2>Formulário de Cadastro</h2><br>
         <div class="registration">
-          <form id="meuFormulario" onsubmit="salvarInformacoes(event)">
-  
+          <form id="meuFormulario"  onsubmit="salvarInformacoes(event)">
+            
+              
       <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" required>
+      <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
 
       <label for="nomeUsuario">Nome de Usuário:</label>
-      <input type="text" id="nomeUsuario" name="nomeUsuario" required>
+      <input type="text" id="nomeUsuario" name="nomeUsuario" placeholder="Digite um nome de usuário" required>
 
       <label for="senha">Senha:</label>
-      <input type="password" id="senha" name="senha" required>
+      <input type="password" id="senha" name="senha" placeholder="Digite sua senha"required>
 
       <label for="confirmaSenha">Confirme sua Senha:</label>
-      <input type="password" id="confirmaSenha" name="confirmaSenha" required>
+      <input type="password" id="confirmaSenha" name="confirmaSenha" placeholder="Confirme sua senha" required>
 
       <label for="data-nascimento">Data de Nascimento:</label>
-      <input type="date" id="dataNascimento" name="dataNascimento">
+      <input type="date" id="dataNascimento" name="dataNascimento" >
 
       <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" name="email" placeholder="Digite seu email" required>
 
       <label for="telefone">Telefone:</label>
-      <input type="tel" id="telefone" name="telefone" required>
+      <input type="tel" id="telefone" name="telefone" placeholder="Informe seu número" required>
 
       <label for="cargo">Cargo:</label>
-      <input type="text" id="cargo" name="cargo">
+      <input type="text" id="cargo" name="cargo" placeholder="Digite seu cargo">
 
       <div style="text-align: right;">
               <button type="submit" > Cadastrar</button> 
@@ -102,7 +97,9 @@
 </div>
 <br><br><br><br><br><br>
   
+<!--Metodo Get-->
 <script>
+  
  function salvarInformacoes(event) {
     event.preventDefault();
 
@@ -125,7 +122,7 @@
     localStorage.setItem("cargo", cargo);
     
      // Redirecionar para a próxima página
-     window.location.href = "contact.html";
+     window.location.href = "dashboard.html";
         }
 
 
@@ -195,7 +192,7 @@ select {
     color: #fff;
     text-decoration: none;
     border: none;
-    border-radius: 10px; /* Ajuste o valor para tornar as bordas mais quadradas */
+    border-radius: 10px; 
     cursor: pointer;
   }
 

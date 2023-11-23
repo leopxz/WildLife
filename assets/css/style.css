@@ -557,19 +557,19 @@ section {
 }
 
 /*--------------------------------------------------------------
-# About
+# sobreNos
 --------------------------------------------------------------*/
-.about .container {
+.sobreNos .container {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   padding-bottom: 15px;
 }
 
-.about .count-box {
+.sobreNos .count-box {
   padding: 60px 0;
   width: 100%;
 }
 
-.about .count-box i {
+.sobreNos .count-box i {
   display: block;
   font-size: 48px;
   color: #078856;
@@ -577,7 +577,7 @@ section {
   line-height: 0;
 }
 
-.about .count-box span {
+.sobreNos .count-box span {
   font-size: 28px;
   line-height: 25px;
   display: block;
@@ -586,7 +586,7 @@ section {
   margin-left: 60px;
 }
 
-.about .count-box p {
+.sobreNos .count-box p {
   padding: 5px 0 0 0;
   margin: 0 0 0 60px;
   font-family: "Raleway", sans-serif;
@@ -595,7 +595,7 @@ section {
   color: #2e4b5e;
 }
 
-.about .count-box a {
+.sobreNos .count-box a {
   font-weight: 600;
   display: block;
   margin-top: 20px;
@@ -605,32 +605,32 @@ section {
   transition: ease-in-out 0.3s;
 }
 
-.about .count-box a:hover {
+.sobreNos .count-box a:hover {
   color: #477392;
 }
 
-.about .content {
+.sobreNos .content {
   font-size: 15px;
 }
 
-.about .content h3 {
+.sobreNos .content h3 {
   font-weight: 700;
   font-size: 24px;
   color: #263d4d;
 }
 
-.about .content ul {
+.sobreNos .content ul {
   list-style: none;
   padding: 0;
 }
 
-.about .content ul li {
+.sobreNos .content ul li {
   padding-bottom: 10px;
   padding-left: 28px;
   position: relative;
 }
 
-.about .content ul i {
+.sobreNos .content ul i {
   font-size: 24px;
   color: #078856;
   position: absolute;
@@ -638,11 +638,11 @@ section {
   top: -2px;
 }
 
-.about .content p:last-child {
+.sobreNos .content p:last-child {
   margin-bottom: 0;
 }
 
-.about .play-btn {
+.sobreNos .play-btn {
   width: 94px;
   height: 94px;
   background: radial-gradient(#078856 50%, rgba(255, 74, 23, 0.4) 52%);
@@ -654,7 +654,7 @@ section {
   overflow: hidden;
 }
 
-.about .play-btn::after {
+.sobreNos .play-btn::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -669,7 +669,7 @@ section {
   transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
-.about .play-btn::before {
+.sobreNos .play-btn::before {
   content: "";
   position: absolute;
   width: 120px;
@@ -687,12 +687,12 @@ section {
   background: rgba(198, 16, 0, 0);
 }
 
-.about .play-btn:hover::after {
+.sobreNos .play-btn:hover::after {
   border-left: 15px solid #078856;
   transform: scale(20);
 }
 
-.about .play-btn:hover::before {
+.sobreNos .play-btn:hover::before {
   content: "";
   position: absolute;
   left: 50%;
@@ -853,40 +853,40 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Courses
+# infoAnimais
 --------------------------------------------------------------*/
 
 
 
-.courses .course-item {
+.infoAnimais .course-item {
   border-radius: 5px;
   border: 1px solid #eef0ef;
 }
 
-.courses .course-content {
+.infoAnimais .course-content {
   padding: 15px;
 }
 
-.courses .course-content h3 {
+.infoAnimais .course-content h3 {
   font-weight: 700;
   font-size: 20px;
 }
 
-.courses .course-content h3 a {
+.infoAnimais .course-content h3 a {
   color: #37423b;
   transition: 0.3s;
 }
 
-.courses .course-content h3 a:hover {
+.infoAnimais .course-content h3 a:hover {
   color: #078856;
 }
 
-.courses .course-content p {
+.infoAnimais .course-content p {
   font-size: 14px;
   color: #777777;
 }
 
-.courses .course-content h4 {
+.infoAnimais .course-content h4 {
   font-size: 14px;
   background: #078856;
   padding: 7px 14px;
@@ -894,31 +894,31 @@ section {
   margin: 0;
 }
 
-.courses .course-content .price {
+.infoAnimais .course-content .price {
   margin: 0;
   font-weight: 700;
   font-size: 18px;
   color: #37423b;
 }
 
-.courses .trainer {
+.infoAnimais .trainer {
   padding-top: 15px;
   border-top: 1px solid #eef0ef;
 }
 
-.courses .trainer .trainer-profile img {
+.infoAnimais .trainer .trainer-profile img {
   max-width: 50px;
   border-radius: 50px;
 }
 
-.courses .trainer .trainer-profile span {
+.infoAnimais .trainer .trainer-profile span {
   padding-left: 10px;
   font-weight: 600;
   font-size: 16px;
   color: #5a6c60;
 }
 
-.courses .trainer .trainer-rank {
+.infoAnimais .trainer .trainer-rank {
   font-size: 18px;
   color: #657a6d;
 }
@@ -1086,7 +1086,7 @@ section {
 /*--------------------------------------------------------------
 # Cource Details
 --------------------------------------------------------------*/
-.course-details h3 {
+.detalhesAnimais h3 {
   font-size: 24px;
   margin: 3px 0 15px 0;
   font-weight: 700;
@@ -1094,7 +1094,7 @@ section {
   padding-bottom: 10px;
 }
 
-.course-details h3:before {
+.detalhesAnimais h3:before {
   content: "";
   position: absolute;
   display: block;
@@ -1105,7 +1105,7 @@ section {
   left: 0;
 }
 
-.course-details h3:after {
+.detalhesAnimais h3:after {
   content: "";
   position: absolute;
   display: block;
@@ -1116,29 +1116,29 @@ section {
   left: 0;
 }
 
-.course-details .course-info {
+.detalhesAnimais .course-info {
   background: #f6f7f6;
   padding: 10px 15px;
   margin-bottom: 15px;
 }
 
-.course-details .course-info h5 {
+.detalhesAnimais .course-info h5 {
   font-weight: 400;
   font-size: 16px;
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
 
-.course-details .course-info p {
+.detalhesAnimais .course-info p {
   margin: 0;
   font-weight: 600;
 }
 
-.course-details .course-info a {
+.detalhesAnimais .course-info a {
   color: #657a6d;
 }
 
-.course-details .container{
+.detalhesAnimais .container{
   margin-top: 2rem;
 }
 
@@ -1388,18 +1388,18 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Contact
+# dashboard
 --------------------------------------------------------------*/
-.contact {
+.dashboard {
   padding-top: 5px;
 }
 
-.contact .info {
+.dashboard .info {
   width: 100%;
   background: #fff;
 }
 
-.contact .info i {
+.dashboard .info i {
   font-size: 20px;
   color: #078856;
   float: left;
@@ -1413,7 +1413,7 @@ section {
   transition: all 0.3s ease-in-out;
 }
 
-.contact .info h4 {
+.dashboard .info h4 {
   padding: 0 0 0 60px;
   font-size: 22px;
   font-weight: 600;
@@ -1421,35 +1421,35 @@ section {
   color: #37423b;
 }
 
-.contact .info p {
+.dashboard .info p {
   padding: 0 0 0 60px;
   margin-bottom: 0;
   font-size: 14px;
   color: #657a6d;
 }
 
-.contact .info .email,
-.contact .info .phone {
+.dashboard .info .email,
+.dashboard .info .phone {
   margin-top: 40px;
 }
 
-.contact .info .email:hover i,
-.contact .info .address:hover i,
-.contact .info .phone:hover i {
+.dashboard .info .email:hover i,
+.dashboard .info .address:hover i,
+.dashboard .info .phone:hover i {
   background: #078856;
   color: #fff;
 }
 
-.contact .php-email-form {
+.dashboard .php-email-form {
   width: 100%;
   background: #fff;
 }
 
-.contact .php-email-form .form-group {
+.dashboard .php-email-form .form-group {
   padding-bottom: 8px;
 }
 
-.contact .php-email-form .error-message {
+.dashboard .php-email-form .error-message {
   display: none;
   color: #fff;
   background: #ed3c0d;
@@ -1458,11 +1458,11 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br+br {
+.dashboard .php-email-form .error-message br+br {
   margin-top: 25px;
 }
 
-.contact .php-email-form .sent-message {
+.dashboard .php-email-form .sent-message {
   display: none;
   color: #fff;
   background: #18d26e;
@@ -1471,14 +1471,14 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .loading {
+.dashboard .php-email-form .loading {
   display: none;
   background: #fff;
   text-align: center;
   padding: 15px;
 }
 
-.contact .php-email-form .loading:before {
+.dashboard .php-email-form .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -1490,27 +1490,27 @@ section {
   animation: animate-loading 1s linear infinite;
 }
 
-.contact .php-email-form input,
-.contact .php-email-form textarea {
+.dashboard .php-email-form input,
+.dashboard .php-email-form textarea {
   border-radius: 4px;
   box-shadow: none;
   font-size: 14px;
 }
 
-.contact .php-email-form input:focus,
-.contact .php-email-form textarea:focus {
+.dashboard .php-email-form input:focus,
+.dashboard .php-email-form textarea:focus {
   border-color: #078856;
 }
 
-.contact .php-email-form input {
+.dashboard .php-email-form input {
   height: 44px;
 }
 
-.contact .php-email-form textarea {
+.dashboard .php-email-form textarea {
   padding: 10px 12px;
 }
 
-.contact .php-email-form button[type=submit] {
+.dashboard .php-email-form button[type=submit] {
   background: #078856;
   border: 0;
   padding: 10px 35px;
@@ -1519,7 +1519,7 @@ section {
   border-radius: 50px;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.dashboard .php-email-form button[type=submit]:hover {
   background: #3ac162;
 }
 
@@ -1547,11 +1547,11 @@ section {
   background: #f9faf9;
 }
 
-#footer .footer-top .footer-contact {
+#footer .footer-top .footer-dashboard {
   margin-bottom: 30px;
 }
 
-#footer .footer-top .footer-contact h4 {
+#footer .footer-top .footer-dashboard h4 {
   font-size: 22px;
   margin: 0 0 30px 0;
   padding: 2px 0 2px 0;
@@ -1559,7 +1559,7 @@ section {
   font-weight: 700;
 }
 
-#footer .footer-top .footer-contact p {
+#footer .footer-top .footer-dashboard p {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
