@@ -49,7 +49,6 @@
           <li><a class="active" href="index.html">Inicio</a></li>          
           <li><a href="dashboard.html">Dashboard</a></li>
           <li><a href="infoAnimais.html">Informações Animais</a></li>
-          <li><a href="dados.html">Certificados</a></li>
           <li><a href="Rank.html">Ranking</a></li>
           <li><a href="sobreNos.html">Sobre</a></li>
         </ul>
@@ -117,7 +116,7 @@
           <form id="meuFormulario" onsubmit="salvarInformacoes(event)">
           
             <label for="docIdentificacao">Documento de Identificação:</label>
-            <input type="text" id="docIdentificacao" name="docIdentificacao" required>
+            <input type="text" id="docIdentificacao" name="docIdentificacao" placeholder="Digite seu CPF" required>
                 <br>
     
             <label for="datetimeLocal">Data e Hora de Entrada:</label>
@@ -144,10 +143,10 @@
                 <br>
     
             <label for="nome">Nome Animal:</label>
-            <input type="text" id="nome" name="nome" required>
+            <input type="text" id="nome" name="nome" placeholder="Nome do animal" required>
                 <br>
             <label for="cientifico">Nome Científico:</label>
-            <input type="text" id="cientifico" name="cientifico" required>
+            <input type="text" id="cientifico" name="cientifico" placeholder="Nome Científico" required>
                 <br>
     
             <label for="sexo">Sexo:</label>
@@ -158,15 +157,15 @@
                 <br> 
     
            <label for="encontrado">Onde foi Encontrado:</label>
-           <input type="text" id="encontrado" name="encontrado">
+           <input type="text" id="encontrado" name="encontrado" placeholder="Onde foi encontrado?">
                 <br>
     
            <label for="cativeiro">Local de Cativeiro:</label>
-           <input type="text" id="cativeiro" name="cativeiro">
+           <input type="text" id="cativeiro" name="cativeiro" placeholder="Qual o destino?">
                  <br>
     
             <label for="tempoCativeiro">Tempo de Cativeiro:</label>
-            <input type="text" id="tempoCativeiro" name="tempoCativeiro">
+            <input type="text" id="tempoCativeiro" name="tempoCativeiro" placeholder="Quanto tempo vai passar?">
                 <br>
     
             <label for="estadoSaude">Estado de Saúde:</label>
@@ -178,19 +177,19 @@
                 <br>
     
             <label for="numeroRegistro">Número de Registro:</label>
-            <input type="text" id="numeroRegistro" name="numeroRegistro">
+            <input type="text" id="numeroRegistro" name="numeroRegistro" placeholder="Número de registro animal">
                 <br>
     
             <label for="observacoes">Observações sobre o Animal:</label>
-            <textarea id="observacoes" name="observacoes" rows="4"></textarea>
+            <textarea id="observacoes" name="observacoes" placeholder="Descreva o estado de como encontrou o animal" rows="4"></textarea>
                 <br>
     
              <label for="entreguePor">Entregue Por:</label>
-            <input type="text" id="entreguePor" name="entreguePor">
+            <input type="text" id="entreguePor" name="entreguePor" placeholder="Resgatado por">
                 <br>
     
             <label for="recebidoPor">Recebido Por:</label>
-            <input type="text" id="recebidoPor" name="recebidoPor">
+            <input type="text" id="recebidoPor" name="recebidoPor" placeholder="Acolhido por">
                 <br>
     
             <div style="text-align: right;">
