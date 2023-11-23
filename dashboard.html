@@ -31,11 +31,7 @@
         <!-- Template Main CSS File -->
         <link href="assets/css/style.css" rel="stylesheet">
 
-        <!-- ======================================================= * Template Name:
-        Mentor * Updated: Sep 18 2023 with Bootstrap v5.3.2 * Template URL:
-        https://bootstrapmade.com/mentor-free-education-bootstrap-theme/ * Author:
-        BootstrapMade.com * License: https://bootstrapmade.com/license/
-        ======================================================== -->
+        
     </head>
 
     <body>
@@ -43,27 +39,26 @@
         <!-- ======= Header ======= -->
         <header id="header" class="fixed-top">
             <div class="container d-flex align-items-center">
-
+                
+                <!--logo-->
                 <h1 class="logo me-auto">
                     <a href="index.html">Wild<br>Life</a>
                 </h1>
-                <!-- Uncomment below if you prefer to use an image logo -->
-                <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png"
-                alt="" class="img-fluid"></a>-->
-
+        
+                <!--Menu-->
                 <nav id="navbar" class="navbar order-last order-lg-0">
                     <ul>
                         <li><a class="active" href="index.html">Inicio</a></li>          
                         <li><a href="cadastroanimal2.html"><strong>Cadastrar Animal</strong></a></li>
-                        <li><a href="courses.html">Informações Animais</a></li>
+                        <li><a href="infoAnimais.html">Informações Animais</a></li>
                         <li><a href="Rank.html">Ranking</a></li>
-                        <li><a href="about.html">Sobre</a></li>
+                        <li><a href="sobreNos.html">Sobre</a></li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </nav>
-                <!-- .navbar -->
-
-                <a href="courses.html" class="get-started-btn">Bem vindo!</a>
+            
+                <!--Icone de bem vindo a pagina-->
+                <a href="dashboard.html" class="get-started-btn">Bem vindo!</a>
 
             </div>
         </header>
@@ -76,15 +71,15 @@
             <br><br><br><br>
 
         
-
-            <section id="contact" class="contact">
+            <!--Requisição para ligar a camera do usuário-->
+            <section id="dashboard" class="dashboard">
                 <div data-aos="fade-up">
                     <input type="file" id="fileInput" style="display: none;">
                     <div id="imagemSelecionada"></div>
                 </div>
 
                 <div class="container" data-aos="fade-up">
-                    <!-- Resto da sua seção "Contact" aqui -->
+                   
                 </div>
 
                 <div data-aos="fade-up">
@@ -105,6 +100,8 @@
                             style="height: 150px; width: 150px; border-radius: 50%; border: 1px solid #ffffff; display: none;"></video>
 
                     </div>
+
+                    <!--Requisição para abrir a galeria do celular ou computador-->
                     <div class="centralizar margin-top">
                         <button
                             id="botaoClick"
@@ -135,8 +132,8 @@
             
             <!-- End Breadcrumbs -->
 
-            <!-- ======= Contact Section ======= -->
-            <section id="contact" class="contact">
+            <!-- ======= Informações do usuário Capitadas ======= -->
+            <section id="dashboard" class="dashboard">
                 <div data-aos="fade-up"></div>
 
                 <div class="container" data-aos="fade-up">
@@ -191,7 +188,7 @@
 
                     </div>
                 </section>
-                <!-- End Contact Section -->
+                <!-- End dashboard Section -->
 
             </main>
             <!-- End #main -->
@@ -205,7 +202,7 @@
                     </div>
                 </div>
 
-                <!-- ======= Footer ======= -->
+                <!-- Rodapé -->
                 <footer id="footer">
                     <div class="container d-md-flex py-4">
 
@@ -219,7 +216,7 @@
 
                   <script>
                        
-                // Recuperar as informações do localStorage 
+         // Recuperar as informações do localStorage 
          
         var nomeSalvo = localStorage.getItem("nome");
         var nomeUsuarioSalvo = localStorage.getItem("nomeUsuario");
@@ -238,12 +235,11 @@
         document.getElementById("spancargo").innerText = cargoSalvo;
                  </script>
 
+
+
+                        <!--Creditos da aplicação-->
                             <div class="credits">
-                                <!-- All the links in the footer should remain intact. -->
-                                <!-- You can delete the links only if you purchased the pro version. -->
-                                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                                <!-- Purchase the pro version with working PHP/AJAX contact form:
-                                https://bootstrapmade.com/mentor-free-education-bootstrap-theme/ -->
+                            
                                 Designed by
                                 <a href="https://bootstrapmade.com/">Equipe Love Start</a>
                             </div>
@@ -266,20 +262,11 @@
                             </a>
                         </div>
                     </div>
-                </footer>
-                <!-- End Footer -->
 
-                <!-- Vendor JS Files -->
-                <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-                <script src="assets/vendor/aos/aos.js"></script>
-                <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-                <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-                <script src="assets/vendor/php-email-form/validate.js"></script>
-
-                <!-- Template Main JS File -->
-                <script src="assets/js/main.js"></script>
 
                 <script>
+                   
+                   //Escolher a imagem a partir da galeria
 
                      function selectImage() {
                           const inputFile = document.getElementById("inputFile");
@@ -300,7 +287,8 @@
             inputFile.click();
         }
 
-
+                    // Pede permissão para o usuário abrir a camera, é salva a foto no perfil do dashboard
+                    
                     function getUserMedia(options, successCallback, failureCallback) {
                         var api = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
                         if (api) {
@@ -360,6 +348,8 @@
                         btn.style.display = "none";
                     }
 
+
+                    // Seleciona a foto é exibe na tela
                     function takePhoto() {
                         bordavideo.style.display = "none";
                         esconderBtn();
@@ -385,10 +375,12 @@
                             .catch(err => alert('Error: ' + err));
                     }
                 </script>
+                
 <style>
     
 
-  
+  /*Posiciona a imagem selecionada*/ 
+
   #selectedImage {
 
     margin: 0 auto; 
@@ -396,6 +388,18 @@
     margin-top: 20px;
   }
 </style>
+</footer>
+<!-- End Footer -->
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+
+<!-- Template Main JS File -->
+<script src="assets/js/main.js"></script>
 
 
             </body>

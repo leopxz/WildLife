@@ -30,13 +30,7 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Mentor
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  
  
 </head>
 
@@ -45,34 +39,35 @@
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
-
+      
+      <!-- logo -->
       <h1 class="logo me-auto"><a href="index.html">Wild<br>Life</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
+      
+       <!-- Menu -->
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="active" href="index.html">Inicio</a></li>          
-          <li><a href="contact.html">Dashboard</a></li>
-          <li><a href="courses.html">Informações Animais</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="infoAnimais.html">Informações Animais</a></li>
           <li><a href="dados.html">Certificados</a></li>
           <li><a href="Rank.html">Ranking</a></li>
-          <li><a href="about.html">Sobre</a></li>
+          <li><a href="sobreNos.html">Sobre</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      </nav>
 
       
 
     </div>
-  </header><!-- End Header -->
+  </header>
+  <!-- End Header -->
 
   
   <main id="main">
 
     <br><br><br><br><br>
 
-   
+    <!--Botão com informações sobre o cadastro-->
     <div class="registration-form">
       <p>
         <a class="btn btn-light" style="max-width: 225px;" data-bs-toggle="collapse" href="#cssss" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -84,7 +79,9 @@
           <div class="card card-body margin-top">
             Cada cadastro e feito para um animal, preencha os campos abaixo e responda os campos solicitados para um melhor controle de informações. 
           </div>
-        <section>
+        
+           <!-- Abre galeria de fotos para enviar o arquivo -->
+          <section>
           <div class="centralizar margin-top">
             <button
                 id="botaoClick"
@@ -100,6 +97,8 @@
     </div>
     
     <input type="file" id="inputFile" accept="image/*">
+     
+    <!-- botão de selecionar imagem-->
     <div class="centralizar">
         <button class="btn btn-outline-primary" id="escolherTirarFoto" onclick="selectImage()">
             <i class="bi bi-camera"></i>
@@ -111,8 +110,9 @@
      
     </div>
         </section>
-      
-        <h2>Formulário de Registro do Animal</h2><br>
+
+      <!-- Formulário de informações sobre o animal-->
+        <h2>Registro do Animal</h2><br>
         <div class="registration">
           <form id="meuFormulario" onsubmit="salvarInformacoes(event)">
           
@@ -284,6 +284,9 @@ display: block;
 margin-top: 20px;
 }
 
+h2{
+  margin-right: 3rem;
+}
   body {
       font-family: Arial, sans-serif;
       background-image: linear-gradient( to top, yellow, green);
@@ -302,7 +305,7 @@ margin-top: 20px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       width: 300px;
       text-align: center;
-      margin-left: 4rem;
+      margin-right: 3rem;
       
   }
   .registration{
@@ -313,7 +316,7 @@ margin-top: 20px;
       border-radius: 5px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       width: 300px;
-      margin-left: 4rem;
+      margin-right: 3rem;
     
   }
 
