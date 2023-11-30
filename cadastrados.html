@@ -36,43 +36,40 @@
     </head>
 
     <body>
-
-        <!-- ======= Header ======= -->
-        <header id="header" class="fixed-top">
-            <div class="container d-flex align-items-center">
-                
-                <!-- Logo -->
-                <h1 class="logo me-auto">
-                    <a href="index.html">Wild<br>Life</a>
-                </h1>
-              
-                <!-- Menu -->
-                <nav id="navbar" class="navbar order-last order-lg-0">
-                    <ul>
-                        <li><a class="active" href="index.html">Inicio</a></li> 
-                        <li><a id="infoAnimaisLink" href="infoAnimais.html">Informações Animais</a></li>
-                        <li><a href="dashboard.html">Dashboard</a></li>
-                        <li><a id="rankingLink" href="Rank.html">Ranking</a></li>
-                        <li><a id="sobreNosLink" href="sobreNos.html">Sobre</a></li>
-                    </ul>
-                    <i class="bi bi-list mobile-nav-toggle"></i>
-                </nav>
-               
-
-            </div>
-        </header>
-        <!-- End Header -->
+            <!-- ======= Header ======= -->
+            <header id="header" class="fixed-top">
+                <div class="container d-flex align-items-center">
+                    <!-- Logo -->
+                    <h1 class="logo me-auto">
+                        <a href="index.html">Wild<br>Life</a>
+                    </h1>
+                    <!-- Menu -->
+                    <nav id="navbar" class="navbar order-last order-lg-0">
+                        <ul>
+                            <li><a class="active" href="index.html">Inicio</a></li>
+                            <li><a id="infoAnimaisLink" href="infoAnimais.html">Informações Animais</a></li>
+                            <li><a href="dashboard.html">Dashboard</a></li>
+                            <li><a id="rankingLink" href="Rank.html">Ranking</a></li>
+                            <li><a id="sobreNosLink" href="sobreNos.html">Sobre</a></li>
+                        </ul>
+                        <i class="bi bi-list mobile-nav-toggle"></i>
+                    </nav>
+                </div>
+            </header>
+            <!-- End Header -->
 
 
-        <main id="main">
-            <div class="login-container text-align-center">
+            <main id="main">
+                <div class="login-container text-align-center">
                 
                 <!-- Informações coletadas do cadastro dos animais -->
                 <main id="main">
                     <div class="login-container text-align-center">
-                        <h1>Informações Gerais</h1>
-                        <div class="info-section">
-                           
+                        <br><br><br>
+                        <h1>Informações Gerais</h1><br>
+                     <div class="info-section">
+                 <div id="photoContainer"></div><br>
+
                             <p><strong>Doc. Identificação:</strong> <span id="spandocIdentificacao"></span></p>
                             <p><strong> Data e Hora:</strong> <span id="spanDatetimeLocal"></span></p>
                             <p><strong>Responsável pela Entrega:</strong> <span id="spanresponsavelEntrega"></span></p>
@@ -103,8 +100,23 @@
 
             <!-- Template Main JS File -->
             <script src="assets/js/main.js"></script>
-           
+        </div>
+    </div>
+</main>
             <script>
+
+                // Recuperar a imagem do localStorage
+        var animalPhoto = localStorage.getItem("animalPhoto");
+
+                // Exibir a imagem na página
+            if (animalPhoto) {
+         var img = document.createElement("img");
+              img.src = animalPhoto;
+              img.style.maxWidth = "100%";
+              img.style.borderRadius = "10px"; 
+              document.getElementById("photoContainer").appendChild(img);
+}
+
          // Recuperar as informações do localStorage 
          
         var docIdentificacaoSalvo = localStorage.getItem("docIdentificacao");
@@ -138,7 +150,7 @@
         document.getElementById("spanRecebidoPor").innerText = recebidoPorSalvo;
               
         
-        // Configurações do PDF (tamanho, orientação, etc.)
+        // função para baixar a pagina em formato de PDF.
          
         var doc = new jsPDF();
 var specialElementHandlers = {
@@ -158,47 +170,65 @@ function gerarPDF() {
         a.click();
     });
 }
+        // Formatação do PDF, esconder o botão de cadastrar animal e o de download.
+function gerarPDF() {
+    var element = document.getElementById("main");
+
+    // Adiciona uma classe temporária para os botões que não quero que saia no pdf.
+    document.getElementById("btGerarPDF").style.display = "none";
+    document.querySelector(".download-button").style.display = "none";
+
+    html2pdf(element).then(function (pdf) {
+        // Restaura a visibilidade dos botões após o download do PDF
+        document.getElementById("btGerarPDF").style.display = "block";
+        document.querySelector(".download-button").style.display = "block";
+
+        var a = document.createElement("a"); // Cria um novo elemento de âncora
+        a.href = pdf.output('bloburl'); // Define o atributo do elemento de âncora com a URL do PDF gerado.
+        a.download = 'exemplo-pdf.pdf'; // Define o atributo download do elemento de âncora com o nome do arquivo que será utilizado quando o usuário baixar o arquivo.
+        a.click(); // Simula um clique no elemento de âncora, o que inicia o processo de download do arquivo associado à URL.
+    });
+}
             </script>
             
-        <style>
-          h1 {
-            color: #000000;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-image: linear-gradient(to top, yellow, green);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            direction: ltr; 
-        }
-
-        .login-container {
-            background-color: #fff;
-            padding: 20px; 
-            border-radius: 20px;
-            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: center;
-            flex-direction: column;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            
-        }
-
-        h1   {
-            margin-top: auto 0;
-        }
-
-        .text-align-right {
-            text-align: right;
-        }
-            
-        </style>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: green;
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    min-height: 100vh;
+                    direction: ltr;
+                    margin-right: 20px;
+                }
+        
+                .login-container {
+                    background-color: #fff;
+                    padding: 8px;
+                    border-radius: 20px;
+                    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+                    width: 300px;
+                    text-align: center;
+                    flex-direction: column;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 20px auto;
+                }
+        
+                h1 {
+                    color: #000000;
+                    margin-top: 0;
+                }
+        
+                @media (min-width: 768px) {
+                    .login-container {
+                        width: 500px;
+                    }
+                }
+            </style>
     </body>
 </html>

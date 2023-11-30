@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Chamado</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.png" rel="icon">
+  <link href="assets/img/logo.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      
+      <!-- logo -->
+      <h1 class="logo me-auto"><a href="index.html">Wild<br>Life</a></h1>
+      
+       <!-- Menu -->
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="active" href="index.html">Inicio</a></li>
+          <li><a href="infoAnimais.html">Informações Animais</a></li>
+          <li><a href="Rank.html">Ranking</a></li>
+          <li><a href="sobreNos.html">Sobre</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <main id="main">
+    <!-- Introdução sobre a pagina de chamados -->
+    <div class="breadcrumbs container" data-aos="fade-in">
+      <div class="registrationx">
+        <br><br><br>
+        <br>
+        <h1>ABRIR CHAMADO</h1><br>
+        <h3>Bem-vindo à Wild Life, a plataforma dedicada à preservação e cuidados de animais silvestres. Essa página é
+          destinada para você que apoia a causa animal e está disposto a ajudar a vida animal, seja ela qual
+          tipo ou espécie seja. Aqui você vai preencher o formulário com as informações corretas, após isso é
+          só aguardar que vamos entrar em contato com você. </h3>
+      </div>
+    </div>
+
+    <div class="container registration">
+      <form id="meuFormulario" class="registration-form">
+            
+          <!--Dados cadastrais-->     
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>  
+
+      <label for="telefone">Telefone:</label>
+      <input type="tel" id="telefone" name="telefone" placeholder="Digite seu número" required>
+
+      <label for="nomeAnimal">Nome do animal:</label>
+      <input type="text" id="nomeAnimal" name="nomeAnimal" placeholder="Digite o nome do animal"required>
+
+      <label for="cidade">Cidade/UF:</label>
+      <input type="text" id="cidade" name="cidade" placeholder="Digite a cidade e estado" required>
+
+      <label for="bairro">Bairro:</label>
+      <input type="text" id="bairro" name="bairro" placeholder="Digite o bairro">
+
+      <label for="endereco">Local que o animal se encontra:</label>
+      <input type="text" id="endereco" name="endereco" placeholder="Digite o endereço que você viu o animal">
+      
+
+      <label for="dataChamado">Data do Chamado:</label>
+      <input type="date" id="dataChamado" name="dataChamado" >
+      
+      <label for="observacoes">Observações sobre o Animal:</label>
+                <textarea id="observacoes" name="observacoes"
+                    placeholder="Descreva alguma informação adicional caso deseje." rows="5"></textarea>
+
+                <div style="text-align: right;">
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+        <br><br>
+  
+
+
+      </main>
+    
+    
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #078856;
+          margin: 0;
+          padding: 0;
+          min-height: 100vh;
+        }
+    
+        .container {
+          width: 80%;
+          margin: 0 auto;
+        }
+    
+        header {
+          position: relative;
+        }
+    
+        h1,
+        h3 {
+          margin-top: 0;
+          color: rgb(0, 0, 0);
+        }
+    
+        h3 {
+          font-size: 16px;
+        }
+    
+        label {
+          display: block;
+          margin-bottom: 5px;
+          color: black;
+        }
+    
+        input[type="text"],
+        input[type="password"],
+        input[type="date"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 10px;
+          border: 1px solid #000000;
+          border-radius: 5px;
+        }
+    
+        button {
+          width: 100%;
+          padding: 10px;
+          background-color: rgb(20, 7, 136);
+          color: #fff;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+          font-size: 20px;
+        }
+    
+        #observacoes {
+          width: 100%;
+        }
+    
+        @media (min-width: 768px) {
+          header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+    
+          .logo {
+            margin-right: auto;
+          }
+    
+          nav {
+            margin-left: auto;
+          }
+    
+          .registration {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column; /* Alterado para column */
+          }
+    
+          .registrationx,
+          .registration-form {
+            width: 100%;
+          }
+        }
+      </style>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

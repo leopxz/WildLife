@@ -4,6 +4,8 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrMBkgZkeCC6-0uuggbSAy2kbV-hEzxRA&callback=initMap&libraries=maps,marker&v=beta"></script>
+
 
         <title>DashBoard</title>
         <meta content="" name="description">
@@ -66,8 +68,6 @@
         <!-- End Header -->
 
         <main id="main">
-
-            <!-- ======= Breadcrumbs ======= -->
             <br><br><br><br>
 
         
@@ -130,7 +130,7 @@
             </section>
 
             
-            <!-- End Breadcrumbs -->
+            
 
             <!-- ======= Informações do usuário Capitadas ======= -->
             <section id="dashboard" class="dashboard">
@@ -191,7 +191,9 @@
                 <!-- End dashboard Section -->
 
             </main>
-            <!-- End #main -->
+            
+            <!-- Container para o mapa -->
+            <div id="map"></div>
 
             <!-- ======= Footer ======= -->
             <footer id="footer">
@@ -214,7 +216,7 @@
                             </div>
 
 
-                  <script>
+         <script>
                        
          // Recuperar as informações do localStorage 
          
@@ -233,40 +235,8 @@
         document.getElementById("spanemail").innerText = emailSalvo;
         document.getElementById("spantelefone").innerText = telefoneSalvo;
         document.getElementById("spancargo").innerText = cargoSalvo;
-                 </script>
-
-
-
-                        <!--Creditos da aplicação-->
-                            <div class="credits">
-                            
-                                Designed by
-                                <a href="https://bootstrapmade.com/">Equipe Love Start</a>
-                            </div>
-                        </div>
-                        <div class="social-links text-center text-md-right pt-3 pt-md-0">
-                            <a href="#" class="twitter">
-                                <i class="bx bxl-twitter"></i>
-                            </a>
-                            <a href="#" class="facebook">
-                                <i class="bx bxl-facebook"></i>
-                            </a>
-                            <a href="#" class="instagram">
-                                <i class="bx bxl-instagram"></i>
-                            </a>
-                            <a href="#" class="google-plus">
-                                <i class="bx bxl-skype"></i>
-                            </a>
-                            <a href="#" class="linkedin">
-                                <i class="bx bxl-linkedin"></i>
-                            </a>
-                        </div>
-                    </div>
-
-
-                <script>
                    
-                   //Escolher a imagem a partir da galeria
+        //Escolher a imagem a partir da galeria
 
                      function selectImage() {
                           const inputFile = document.getElementById("inputFile");
@@ -287,7 +257,7 @@
             inputFile.click();
         }
 
-                    // Pede permissão para o usuário abrir a camera, é salva a foto no perfil do dashboard
+        // Pede permissão para o usuário abrir a camera, é salva a foto no perfil do dashboard
                     
                     function getUserMedia(options, successCallback, failureCallback) {
                         var api = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
@@ -374,6 +344,45 @@
                             })
                             .catch(err => alert('Error: ' + err));
                     }
+
+
+                    var map;
+
+function initMap() { // Inicializa o mapa
+  
+  map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 14
+  });
+
+  // Obtém a localização do usuário e centraliza o mapa
+  getLocation();
+}
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      var userLocation = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      // Adiciona um marcador para a posição do usuário
+      var marker = new google.maps.Marker({
+        position: userLocation,
+        map: map,
+        title: 'Sua localização'
+      });
+
+      // Centraliza o mapa na localização do usuário
+      map.setCenter(userLocation);
+    }, function () {
+      // Tratamento de erro ao obter a localização
+      alert('Erro ao obter a localização do usuário.');
+    });
+  } else {
+    alert('Geolocalização não é suportada pelo seu navegador.');
+  }
+}
                 </script>
                 
 <style>
@@ -387,6 +396,20 @@
     display: block; 
     margin-top: 20px;
   }
+
+      /* Define o tamanho do mapa */
+      #map {
+        height: 60vh; 
+        width: 100%; 
+      }
+
+      
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    
 </style>
 </footer>
 <!-- End Footer -->
