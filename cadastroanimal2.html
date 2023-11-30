@@ -55,29 +55,12 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
 
-      
-
     </div>
   </header>
   <!-- End Header -->
 
-  
   <main id="main">
-
-    <br><br><br><br><br>
-
-    <!--Botão com informações sobre o cadastro-->
-    <div class="registration-form">
-      <p>
-        <a class="btn btn-light" style="max-width: 225px;" data-bs-toggle="collapse" href="#cssss" role="button" aria-expanded="false" aria-controls="collapseExample">
-          Cadastro 
-        </a>
-      </p>   
-         <div class="collapse" id="cssss">
-          
-          <div class="card card-body margin-top">
-            Cada cadastro e feito para um animal, preencha os campos abaixo e responda os campos solicitados para um melhor controle de informações. 
-          </div>
+    <br><br>
         
            <!-- Abre galeria de fotos para enviar o arquivo -->
           <section>
@@ -111,8 +94,9 @@
         </section>
 
       <!-- Formulário de informações sobre o animal-->
-        <h2>Registro do Animal</h2><br>
+        <h2><strong>Registro do Animal</strong></h2><br>
         <div class="registration">
+          
           <form id="meuFormulario" onsubmit="salvarInformacoes(event)">
           
             <label for="docIdentificacao">Documento de Identificação:</label>
@@ -193,19 +177,12 @@
                 <br>
     
             <div style="text-align: right;">
-              <button type="submit">Finalizar</button>
+              <button type="submit">Cadastrar</button>
                 
           </div>
         </form>
       </div>
         
-          </div>
-        
-      
-      </form>
-    </div>
-  
-</div>
 
 <script>
      function salvarInformacoes(event) {
@@ -253,24 +230,27 @@
     window.location.href = "cadastrados.html";
         }
 
-  function selectImage() {
+        function selectImage() {
     const inputFile = document.getElementById("inputFile");
     const selectedImage = document.getElementById("selectedImage");
 
     inputFile.onchange = function (e) {
-      const file = e.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          selectedImage.src = e.target.result;
-          selectedImage.style.display = "block";
-        };
-        reader.readAsDataURL(file);
-      }
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                selectedImage.src = e.target.result;
+                selectedImage.style.display = "block";
+
+                // Salvar a imagem no localStorage
+                localStorage.setItem("animalPhoto", e.target.result);
+            };
+            reader.readAsDataURL(file);
+        }
     };
 
     inputFile.click();
-  }
+}
 </script>
 </main>
 
@@ -288,7 +268,7 @@ h2{
 }
   body {
       font-family: Arial, sans-serif;
-      background-image: linear-gradient( to top, yellow, green);
+      background-color:  #078856;
       margin: 0;
       padding: 0;
       display: flex;
@@ -298,15 +278,15 @@ h2{
   }
 
   .registration-form {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(241, 240, 240, 0.1);
+    max-width: 100%; /* Alteração aqui */
+    text-align: center;
+    margin-right: 4rem;
+}
       
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      width: 300px;
-      text-align: center;
-      margin-right: 3rem;
-      
-  }
+  
   .registration{
       display: flex;
       justify-content: center;
@@ -324,6 +304,7 @@ h2{
   h2 {
       margin-top: auto;
       text-align: center;
+      color: #000000;
       
       
   }
@@ -331,6 +312,7 @@ h2{
   label {
       display: block;
       margin-bottom: 5px;
+      color: #000000;
   }
 
   input[type="text"],
@@ -349,16 +331,20 @@ h2{
   button {
       width: 100%;
       padding: 10px;
-      background-color: #078856;
-      color: #fff;
+      background-color: rgb(20, 7, 136);
+      color: #ffffff;
       border: none;
       border-radius: 5px;
       cursor: pointer;;
   }
 
   button:hover {
-      background-color: #056e47;
+    background-color: rgb(20, 7, 136);
   }
+
+  #observacoes {
+    width: 100%;
+}
 </style>
 
 

@@ -61,72 +61,46 @@
   <main id="main">
     <br><br><br><br><br>
     
+    
     <!--Dados cadastrais-->
-    <h2>Formulário de Cadastro</h2><br>
+    <h2>CHAMADO DE URGÊNCIA</h2><br>
         <div class="registration">
           <form id="meuFormulario"  onsubmit="salvarInformacoes(event)">
             
               
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
-
-      <label for="nomeUsuario">Nome de Usuário:</label>
-      <input type="text" id="nomeUsuario" name="nomeUsuario" placeholder="Digite um nome de usuário" required>
-
-      <label for="senha">Senha:</label>
-      <input type="password" id="senha" name="senha" placeholder="Digite sua senha"required>
-
-      <label for="confirmaSenha">Confirme sua Senha:</label>
-      <input type="password" id="confirmaSenha" name="confirmaSenha" placeholder="Confirme sua senha" required>
-
-      <label for="data-nascimento">Data de Nascimento:</label>
-      <input type="date" id="dataNascimento" name="dataNascimento" >
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="Digite seu email" required>
-
-      <label for="telefone">Telefone:</label>
-      <input type="tel" id="telefone" name="telefone" placeholder="Informe seu número" required>
-
-      <label for="cargo">Cargo:</label>
-      <input type="text" id="cargo" name="cargo" placeholder="Digite seu cargo">
-
-      <div style="text-align: right;">
-              <button type="submit" > Cadastrar</button> 
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>  
+      
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="Digite seu número" required>
+      
+            <label for="nomeAnimal">Nome do animal:</label>
+            <input type="text" id="nomeAnimal" name="nomeAnimal" placeholder="Digite o nome do animal"required>
+      
+            <label for="cidade">Cidade/UF:</label>
+            <input type="text" id="cidade" name="cidade" placeholder="Digite a cidade e estado" required>
+      
+            <label for="bairro">Bairro:</label>
+            <input type="text" id="bairro" name="bairro" placeholder="Digite o bairro">
+      
+            <label for="endereco">Local que o animal se encontra:</label>
+            <input type="text" id="endereco" name="endereco" placeholder="Digite o endereço que você viu o animal">
+            
+      
+            <label for="dataChamado">Data do Chamado:</label>
+            <input type="date" id="dataChamado" name="dataChamado" >
+            
+            <label for="observacoes">Observações sobre o Animal:</label>
+                      <textarea id="observacoes" name="observacoes"
+                          placeholder="Descreva alguma informação adicional caso deseje." rows="5"></textarea>
+      
+                      <div style="text-align: right;">
+                          <button type="submit">Enviar</button>
   </form>
 </div>
-<br><br><br><br><br><br>
+<br><br>
   
-<!--Metodo Get-->
-<script>
-  
- function salvarInformacoes(event) {
-    event.preventDefault();
 
-    // Obter os valores do formulário
-    
-    var nome = document.getElementById("nome").value;
-    var nomeUsuario = document.getElementById("nomeUsuario").value;
-    var dataNascimento = document.getElementById("dataNascimento").value;
-    var email = document.getElementById("email").value;
-    var telefone = document.getElementById("telefone").value;
-    var cargo = document.getElementById("cargo").value;
-
-    // Salvar as informações no localStorage
-    
-    localStorage.setItem("nome", nome);
-    localStorage.setItem("nomeUsuario", nomeUsuario);
-    localStorage.setItem("dataNascimento", dataNascimento);
-    localStorage.setItem("email", email);
-    localStorage.setItem("telefone", telefone);
-    localStorage.setItem("cargo", cargo);
-    
-     // Redirecionar para a próxima página
-     window.location.href = "dashboard.html";
-        }
-
-
-</script>
 
 <style>
   body {
@@ -161,9 +135,7 @@ label {
 }
 
 input[type="text"],
-input[type="password"],
 input[type="date"],
-input[type="email"],
 input[type="tel"],
 select {
     width: 100%;
@@ -202,6 +174,9 @@ select {
 .get-started-btn:hover {
   background-color: rgb(20, 7, 136);
 }
+#observacoes {
+          width: 100%;
+        }
 </style>
 
   
