@@ -61,15 +61,12 @@
 
             <main id="main">
                 <div class="login-container text-align-center">
-                
-                <!-- Informações coletadas do cadastro dos animais -->
-                <main id="main">
-                    <div class="login-container text-align-center">
-                        <br><br><br>
-                        <h1>Informações Gerais</h1><br>
-                     <div class="info-section">
-                 <div id="photoContainer"></div><br>
-
+                    <!-- Informações coletadas do cadastro dos animais -->
+                    <div class="info-section">
+                        <div id="photoContainer">
+                            <img id="animalPhoto" style="max-width: 50%; border-radius: 10px;" class="pdf-visible">
+                        </div>
+        
                             <p><strong>Doc. Identificação:</strong> <span id="spandocIdentificacao"></span></p>
                             <p><strong> Data e Hora:</strong> <span id="spanDatetimeLocal"></span></p>
                             <p><strong>Responsável pela Entrega:</strong> <span id="spanresponsavelEntrega"></span></p>
@@ -85,10 +82,11 @@
                             <p><strong>Recebido Por:</strong><span id="spanRecebidoPor"></span></p>
 
                                 <!-- Redireciona para pagina de cadastro -->
-                            <a href="cadastroanimal2.html" download class="get-started-btn download-button">Cadastrar Outro Animal</a><br><br>
+                                <a href="cadastroanimal2.html" download class="get-started-btn">Cadastrar Outro Animal</a><br><br>
                                 <!-- Botão de download da pagina em PDF -->
-                            <button id="btGerarPDF" onclick="gerarPDF()">Baixar PDF</button>
-
+                                <button id="btGerarPDF" onclick="gerarPDF()">Baixar PDF</button>
+                                
+                            
 
                             
             <!-- Vendor JS Files -->
@@ -103,19 +101,9 @@
         </div>
     </div>
 </main>
-            <script>
 
-                // Recuperar a imagem do localStorage
-        var animalPhoto = localStorage.getItem("animalPhoto");
-
-                // Exibir a imagem na página
-            if (animalPhoto) {
-         var img = document.createElement("img");
-              img.src = animalPhoto;
-              img.style.maxWidth = "100%";
-              img.style.borderRadius = "10px"; 
-              document.getElementById("photoContainer").appendChild(img);
-}
+<script>
+   
 
          // Recuperar as informações do localStorage 
          
@@ -149,7 +137,22 @@
         document.getElementById("spanEntreguePor").innerText = entreguePorSalvo;
         document.getElementById("spanRecebidoPor").innerText = recebidoPorSalvo;
               
-        
+       
+         // Recuperar a imagem do localStorage
+    var animalPhoto = localStorage.getItem("animalPhoto");
+
+// Exibir a imagem na página
+if (animalPhoto) {
+    var img = document.createElement("img");
+    img.src = animalPhoto;
+    img.style.maxWidth = "50%"; // Ajuste o tamanho conforme necessário
+    img.style.borderRadius = "50px";
+    document.getElementById("photoContainer").appendChild(img);
+    
+    
+
+}
+
         // função para baixar a pagina em formato de PDF.
          
         var doc = new jsPDF();
@@ -161,35 +164,33 @@ var specialElementHandlers = {
 
 
 function gerarPDF() {
-    var element = document.getElementById("main");
-    html2pdf(element).then(function (pdf) {
-        var a = document.createElement("a");
-        a.href = pdf.output('bloburl');
-        a.download = 'exemplo-pdf.pdf';
-        
-        a.click();
-    });
-}
-        // Formatação do PDF, esconder o botão de cadastrar animal e o de download.
-function gerarPDF() {
-    var element = document.getElementById("main");
+        // Esconda os botões ao gerar o PDF
+        var buttons = document.querySelectorAll('.hide-on-pdf');
+        buttons.forEach(function(button) {
+            button.style.display = 'none';
+        });
 
-    // Adiciona uma classe temporária para os botões que não quero que saia no pdf.
-    document.getElementById("btGerarPDF").style.display = "none";
-    document.querySelector(".download-button").style.display = "none";
+        var element = document.getElementById("main");
 
-    html2pdf(element).then(function (pdf) {
-        // Restaura a visibilidade dos botões após o download do PDF
-        document.getElementById("btGerarPDF").style.display = "block";
-        document.querySelector(".download-button").style.display = "block";
+        // Adicione uma classe temporária para os estilos do PDF
+        element.classList.add("pdf-style");
 
-        var a = document.createElement("a"); // Cria um novo elemento de âncora
-        a.href = pdf.output('bloburl'); // Define o atributo do elemento de âncora com a URL do PDF gerado.
-        a.download = 'exemplo-pdf.pdf'; // Define o atributo download do elemento de âncora com o nome do arquivo que será utilizado quando o usuário baixar o arquivo.
-        a.click(); // Simula um clique no elemento de âncora, o que inicia o processo de download do arquivo associado à URL.
-    });
-}
-            </script>
+        html2pdf(element).then(function (pdf) {
+            // Remova a classe original após o download do PDF
+            element.classList.remove("pdf-style");
+
+            // Restaure a visibilidade dos botões após a geração do PDF
+            buttons.forEach(function(button) {
+                button.style.display = 'block';
+            });
+
+            var a = document.createElement("a");
+            a.href = pdf.output('bloburl');
+            a.download = 'exemplo-pdf.pdf';
+            a.click();
+        });
+    }
+    </script>
             
             <style>
                 body {
@@ -229,6 +230,30 @@ function gerarPDF() {
                         width: 500px;
                     }
                 }
-            </style>
+        
+                .hide-on-pdf {
+                    display: none;
+                }
+        
+                .pdf-visible {
+                    display: block;
+                }
+        
+                @media print {
+        #animalPhoto {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .hide-on-pdf {
+            display: none !important;
+        }
+
+        .pdf-visible {
+            display: block !important;
+        }
+    }  
+
+        </style>
     </body>
 </html>
