@@ -47,11 +47,14 @@ License: https://bootstrapmade.com/license/
 </details>
 <details> 
 <summary>Poblematicas ocasionadas pelo modelo de armazenamento de informações atual dos Animais Silvestres </summary>
-	
-![dados](https://github.com/isabelafariass/WildLife-appMobile/assets/128806277/46d23bef-f7d0-44e0-9ae3-96c014e37ac0)
+<div align="center">
+<img src= "https://github.com/leopxz/WildLife/assets/149621968/10dbfd4c-fc21-421b-9cd6-97f83a4d1cf0" width="700px"/>
+</div>	
+
 </details>
 <details> 
 <summary>Modelo convencional [X] Modelo Proposto</summary>
-	
-![fluxograma00](https://github.com/isabelafariass/WildLife-appMobile/assets/128806277/88b9c752-3192-437f-9e95-c9a3e0fdfd37)
+<div align="center">
+<img src= "https://github.com/leopxz/WildLife/assets/149621968/3f425749-4e13-44b9-b540-17bd2ded1688" width="700px"/>
+</div>	
 </details>
