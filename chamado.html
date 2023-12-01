@@ -96,11 +96,21 @@
       
                       <div style="text-align: right;">
                           <button type="submit">Enviar</button>
+                        
   </form>
+ 
 </div>
 <br><br>
-  
+        <script>
+            function salvarInformacoes(event) {
+    // Evita o envio do formulário padrão
+            event.preventDefault();
 
+    // Exibe a mensagem de sucesso
+           document.getElementById("successMessage").style.display = "block";
+  }
+</script>
+</main>
 
 <style>
   body {
