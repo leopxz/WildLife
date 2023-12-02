@@ -4,8 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-        <title>Login</title>
+        <title>Gerenciador</title>
         <meta content="" name="description">
         <meta content="" name="keywords">
  
@@ -29,6 +28,7 @@
 
         <!-- Template Main CSS File -->
         <link href="assets/css/style.css" rel="stylesheet">
+        <link href="assets/css/gerenciador.css" rel="stylesheet">
 
        
     </head>
@@ -47,8 +47,11 @@
                     <ul>
                         <li><a class="active" href="index.html">Inicio</a></li> 
                         <li><a id="infoAnimaisLink" href="infoAnimais.html">Informações Animais</a></li>
+                        <li><a id="sobreNosLink" href="cadastroanimal2.html">Cadastro Animal</a></li>
                         <li><a id="rankingLink" href="Rank.html">Ranking</a></li>
                         <li><a id="sobreNosLink" href="sobreNos.html">Sobre</a></li>
+                        <li><a id="sobreNosLink" href="login.html">Login</a></li>
+                        
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </nav>            
@@ -56,19 +59,59 @@
         </header>
         <!-- End Header -->
 
-        <div class="login-container">
-            <h2>Login</h2>
-            <form id="loginForm">
-                <input type="text" placeholder="Nome de Usuário" id="username" name="username" required>
-                <input type="password" placeholder="Senha" id="password" name="password" required>
-                <button type="button" onclick="login()">Entrar</button>
-            </form>
-            <!-- Botão de cadastrar caso não tenha conta -->
-            <div class="signup-link">
-                Não tem conta? <a href="formulario.html">Cadastre-se</a>
-            </div>
-        </div>
 
+        <div>
+            <table>
+                <tr>
+                    <td><strong>Nome</strong></td>
+                    <td><strong>Nome usuário</strong></td>
+                    <td><strong>Data de Nascimento</strong></td>
+                    <td><strong>Email</strong></td>
+                    <td><strong>Telefone</strong></td>
+                    <td><strong>Cargo</strong></td>
+                    <td><strong>Ações</strong></td> 
+                </tr>
+                <tr>
+                    <td>jose joão da silva cavalcante</td>
+                    <td>joao xxx</td>
+                    <td>12/12/99</td>
+                    <td>joaobmx@gmail.com</td>
+                    <td>81998345325</td>
+                    <td>Protetor animal</td>
+                    <td>
+                        <button onclick="editarUsuario()">Editar</button>
+                        <button onclick="deletarUsuario()">Deletar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Hugo Correa de moraes</td>
+                    <td>correiahugo </td>
+                    <td>13/12/93</td>
+                    <td>hugocorrea@gmail.com </td>
+                    <td>8199843556</td>
+                    <td>Ambientalista</td>
+                    <td>
+                        <button onclick="editarUsuario()">Editar</button>
+                        <button onclick="deletarUsuario()">Deletar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>leonardo paixao silva</td>
+                    <td>leopxz</td>
+                    <td>03/11/94</td>
+                    <td>pxleonarddo@gmail.com</td>
+                    <td>81998346398</td>
+                    <td>Gestor ambiental</td>
+                    <td>
+                        <button onclick="editarUsuario()">Editar</button>
+                        <button onclick="deletarUsuario()">Deletar</button>
+                    </td>
+                </tr>
+            </table>
+            <button onclick="criarUsuario()">Criar Novo</button>
+        </div>
+    
+    
 
             <!-- Vendor JS Files -->
             <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -79,75 +122,9 @@
 
             <!-- Template Main JS File -->
             <script src="assets/js/main.js"></script>
+            <script src="assets/js/gerenciador.js"></script>
            
-
-            <style>
-                body {
-                    font-family: Arial, sans-serif;
-                    background-color: #078856;
-                    margin: 0;
-                    padding: 0;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    height: 100vh;
-                }
-        
-                .login-container {
-                    background-color: #fff;
-                    padding: 50px;
-                    border-radius: 15px; /* Bordas arredondadas */
-                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                    width: 300px;
-                    text-align: center;
-                }
-        
-                input {
-                    width: 100%;
-                    padding: 9px; 
-                    margin-bottom: 10px;
-                    border: 1px solid #ccc;
-                    border-radius: 5px;
-                }
-        
-                button {
-                    width: 90%;
-                    padding: 10px;
-                    background-color: #078856; 
-                    color: #fff;
-                    border: none;
-                    border-radius: 5px;
-                    cursor: pointer;
-                }
-        
-                .login-container {
-                            background-color: #fff;
-                            
-                            padding: 70px;
-                            border-radius: 20px;
-                            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
-                            width: 300px;
-                            text-align: center;
-                            flex-direction: column;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
             
-                        }
-                        
-                .signup-link {
-                    margin-top: 10px;
-                    font-size: 14px;
-                }
-        
-                .signup-link a {
-                    color: #007bff;
-                    text-decoration: none;
-                }
-        
-                .signup-link a:hover {
-                    text-decoration: underline;
-                }
-            </style>
+            
  </body>
     </html>

@@ -1,0 +1,62 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: green;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    direction: ltr;
+    margin-right: 20px;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+
+h1 {
+    color: #000000;
+    margin-top: 0;
+}
+
+@media (min-width: 768px) {
+.login-container {
+margin-top: 70px; /* Ajuste conforme necessário */
+}
+}
+
+.hide-on-pdf {
+    display: none;
+}
+
+.pdf-visible {
+    display: block;
+}
+
+@media print {
+#animalPhoto {
+max-width: 100%;
+height: auto;
+}
+
+.hide-on-pdf {
+display: none !important;
+}
+
+.pdf-visible {
+display: block !important;
+}
+}  
+

@@ -51,6 +51,7 @@
           <li><a href="infoAnimais.html">Informações Animais</a></li>
           <li><a href="Rank.html">Ranking</a></li>
           <li><a href="sobreNos.html">Sobre</a></li>
+          <li><a href="login.html">Login</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -86,39 +87,8 @@
 
    <!-- Template Main JS File -->
    <script src="assets/js/main.js"></script>
+   <script src="assets/js/index.js"></script>
 
-   <!--Implementação do PWA(versão Hibrida)-->
-   <script>
-     if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js').then(reg => {
-      reg.addEventListener('updatefound', () => {
-        newWorker = reg.installing;
-        newWorker.addEventListener('statechange', () => {
-          switch (newWorker.state) {
-            case 'installed':
-              if (navigator.serviceWorker.controller) {
-                
-                console.log('Novo service worker instalado. Aguarde a próxima visita para ativar a atualização.');
-              } else {
-                
-                console.log('Novo service worker ativado. A página será atualizada.');
-                newWorker.postMessage({ action: 'skipWaiting' });
-              }
-              break;
-          }
-        });
-      });
-    });
-
-    let refreshing;
-    navigator.serviceWorker.addEventListener('controllerchange', function () {
-      if (refreshing) return;
-      window.location.reload();
-      refreshing = true;
-    });
-      }
-    </script>
- 
 
 </body>
 
