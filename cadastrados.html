@@ -31,6 +31,7 @@
 
         <!-- Template Main CSS File -->
         <link href="assets/css/style.css" rel="stylesheet">
+        <link href="assets/css/cadastrados.css" rel="stylesheet">
 
 
     </head>
@@ -59,7 +60,7 @@
             <!-- End Header -->
 
 
-            <main id="main">
+            <main id="main">    
                 <div class="login-container text-align-center">
                     <!-- Informações coletadas do cadastro dos animais -->
                     <div class="info-section">
@@ -98,162 +99,10 @@
 
             <!-- Template Main JS File -->
             <script src="assets/js/main.js"></script>
+            <script src="assets/js/cadastrados.js"></script>
         </div>
     </div>
-</main>
-
-<script>
-   
-
-         // Recuperar as informações do localStorage 
-         
-        var docIdentificacaoSalvo = localStorage.getItem("docIdentificacao");
-        var datetimeLocalSalvo = localStorage.getItem("datetimeLocal");
-        var responsavelEntregaSalvo= localStorage.getItem("responsavelEntrega");
-        var tipoEntregaSalvo = localStorage.getItem("tipoEntrega");
-        var nomeSalvo = localStorage.getItem("nome");
-        var cientificoSalvo = localStorage.getItem("cientifico");
-        var sexoSalvo = localStorage.getItem("sexo");
-        var encontradoSalvo = localStorage.getItem("encontrado");
-        var cativeiroSalvo = localStorage.getItem("cativeiro");
-        var tempoCativeiroSalvo = localStorage.getItem("tempoCativeiro");
-        var estadoSaudeSalvo = localStorage.getItem("estadoSaude");
-        var entreguePorSalvo= localStorage.getItem("entreguePor");
-        var recebidoPorSalvo= localStorage.getItem("recebidoPor");
-     
-        // Exibir as informações na página
-         
-        document.getElementById("spandocIdentificacao").innerText = docIdentificacaoSalvo;
-        document.getElementById("spanDatetimeLocal").innerText = datetimeLocalSalvo;
-        document.getElementById("spanresponsavelEntrega").innerText = responsavelEntregaSalvo;
-        document.getElementById("spantipoEntrega").innerText = tipoEntregaSalvo;
-        document.getElementById("spanNome").innerText = nomeSalvo;
-        document.getElementById("spanCientifico").innerText = cientificoSalvo;
-        document.getElementById("spanSexo").innerText = sexoSalvo;
-        document.getElementById("spanEncontrado").innerText = encontradoSalvo;
-        document.getElementById("spanCativeiro").innerText = cativeiroSalvo;
-        document.getElementById("spanTempoCativeiro").innerText = tempoCativeiroSalvo;
-        document.getElementById("spanEstadoSaude").innerText = estadoSaudeSalvo;
-        document.getElementById("spanEntreguePor").innerText = entreguePorSalvo;
-        document.getElementById("spanRecebidoPor").innerText = recebidoPorSalvo;
-              
-       
-         // Recuperar a imagem do localStorage
-    var animalPhoto = localStorage.getItem("animalPhoto");
-
-// Exibir a imagem na página
-if (animalPhoto) {
-    var img = document.createElement("img");
-    img.src = animalPhoto;
-    img.style.maxWidth = "50%"; // Ajuste o tamanho conforme necessário
-    img.style.borderRadius = "50px";
-    document.getElementById("photoContainer").appendChild(img);
+</main>     
     
-    
-
-}
-
-        // função para baixar a pagina em formato de PDF.
-         
-        var doc = new jsPDF();
-var specialElementHandlers = {
-    '#editor': function (element, renderer) {
-        return true;
-    }
-};
-
-
-function gerarPDF() {
-        // Esconda os botões ao gerar o PDF
-        var buttons = document.querySelectorAll('.hide-on-pdf');
-        buttons.forEach(function(button) {
-            button.style.display = 'none';
-        });
-
-        var element = document.getElementById("main");
-
-        // Adicione uma classe temporária para os estilos do PDF
-        element.classList.add("pdf-style");
-
-        html2pdf(element).then(function (pdf) {
-            // Remova a classe original após o download do PDF
-            element.classList.remove("pdf-style");
-
-            // Restaure a visibilidade dos botões após a geração do PDF
-            buttons.forEach(function(button) {
-                button.style.display = 'block';
-            });
-
-            var a = document.createElement("a");
-            a.href = pdf.output('bloburl');
-            a.download = 'exemplo-pdf.pdf';
-            a.click();
-        });
-    }
-    </script>
-            
-            <style>
-                body {
-                    font-family: Arial, sans-serif;
-                    background-color: green;
-                    margin: 0;
-                    padding: 0;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    min-height: 100vh;
-                    direction: ltr;
-                    margin-right: 20px;
-                }
-        
-                .login-container {
-                    background-color: #fff;
-                    padding: 8px;
-                    border-radius: 20px;
-                    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
-                    width: 300px;
-                    text-align: center;
-                    flex-direction: column;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin: 20px auto;
-                }
-        
-                h1 {
-                    color: #000000;
-                    margin-top: 0;
-                }
-        
-                @media (min-width: 768px) {
-                    .login-container {
-                        width: 500px;
-                    }
-                }
-        
-                .hide-on-pdf {
-                    display: none;
-                }
-        
-                .pdf-visible {
-                    display: block;
-                }
-        
-                @media print {
-        #animalPhoto {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .hide-on-pdf {
-            display: none !important;
-        }
-
-        .pdf-visible {
-            display: block !important;
-        }
-    }  
-
-        </style>
     </body>
 </html>

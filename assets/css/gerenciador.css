@@ -1,0 +1,41 @@
+
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                margin: 0;
+            }
+    
+            table {
+                border-collapse: collapse;
+                width: 70%;
+            }
+    
+            td {
+                border: 1px solid black;
+                padding: 8px;
+                text-align: center;
+            }
+    
+            button {
+                padding: 8px;
+                margin-top: 8px;
+            }
+
+            button {
+        padding: 10px; 
+        margin-top: 8px;
+        width: 150px;
+        border: 2px solid rgb(163, 161, 159); 
+        background-color: #078856; 
+        color: #ffffff; 
+        cursor: pointer;
+        border-radius: 8px; 
+        transition: background-color 0.3s ease;
+        outline: none;
+    }
+
+    button:hover {
+        background-color: rgb(235, 34, 11); 
+    }

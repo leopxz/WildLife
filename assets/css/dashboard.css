@@ -1,0 +1,23 @@
+
+  /*Posiciona a imagem selecionada*/ 
+
+  #selectedImage {
+
+    margin: 0 auto; 
+    display: block; 
+    margin-top: 20px;
+  }
+
+      /* Define o tamanho do mapa */
+      #map {
+        height: 60vh; 
+        width: 100%; 
+      }
+
+      
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    
