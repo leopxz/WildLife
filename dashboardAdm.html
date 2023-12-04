@@ -4,8 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-        <title>Login</title>
+        <title>Dashboard Administrador</title>
         <meta content="" name="description">
         <meta content="" name="keywords">
  
@@ -29,8 +28,8 @@
 
         <!-- Template Main CSS File -->
         <link href="assets/css/style.css" rel="stylesheet">
-        <link href="assets/css/login.css" rel="stylesheet">
-        <link href="assets/css/loginAdm.css" rel="stylesheet">
+        <link href="assets/css/dashboardAdm.css" rel="stylesheet">
+
        
     </head>
 
@@ -48,35 +47,32 @@
                     <ul>
                         <li><a class="active" href="index.html">Inicio</a></li> 
                         <li><a id="infoAnimaisLink" href="infoAnimais.html">Informações Animais</a></li>
+                        <li><a id="sobreNosLink" href="cadastroanimal2.html">Cadastro Animal</a></li>
                         <li><a id="rankingLink" href="Rank.html">Ranking</a></li>
                         <li><a id="sobreNosLink" href="sobreNos.html">Sobre</a></li>
+                        <li><a id="sobreNosLink" href="login.html">Login</a></li>
+                        
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </nav>            
             </div>
         </header>
         <!-- End Header -->
-
-        <div class="button-container">
-            <a href="login.html" id="user-login" class="get-started-btn">Usuário</a>
-            <a href="loginAdm.html" id="admin-login" class="get-started-btn">Administrador</a>
+        <br><br><br><br>
+        <div class="content">
+            <h1>PAINEL DO ADMINISTRADOR</h1>
+    
+            <!-- Botões de direcionamento para as paginas -->
+            <div class="button-container">
+                <button onclick="irParaGerenciador()"><strong>Gerenciador Funcionario</strong></button>
+                <button onclick="irParaGerenciadorAnimal()"><strong>Gerenciador Animal</strong></button>
+                <button onclick="irParaGerenciadorAnimal()"><strong>Gerenciador Chamado</strong></button>
+            </div>
         </div>
+       
+       
 
-
-        <div class="login-container">
-            <h2>Login Usuário</h2>
-            <form>
-                <input type="text" id="username" name="username" placeholder="Digite seu usuário" required>
-                <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
-                <button type="submit" id="login">Entrar</button>
-           
-           
-            </form>
-            <div class="signup-link">
-                Não tem conta? <a href="formulario.html">Cadastre-se</a>
-         
-          
-
+        
 
             <!-- Vendor JS Files -->
             <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -87,9 +83,9 @@
 
             <!-- Template Main JS File -->
             <script src="assets/js/main.js"></script>
-            <script src="assets/js/loginAdm.js"></script>
+            <script src="assets/js/gerenciador.js"></script>
            
-
+            
             
  </body>
     </html>

@@ -20,8 +20,9 @@
   }
 
   h2 {
-    margin-top: 0;
+    margin-top: center;
     color: rgb(255, 255, 255);
+    margin-right: 4rem;
 }
 
 label {
@@ -31,9 +32,7 @@ label {
 }
 
 input[type="text"],
-input[type="password"],
 input[type="date"],
-input[type="email"],
 input[type="tel"],
 select {
     width: 100%;
@@ -85,3 +84,8 @@ select {
 .get-started-btn:hover {
   background-color: rgb(20, 7, 136);
 }
+#observacoes {
+          width: 100%;
+        }
+
+  

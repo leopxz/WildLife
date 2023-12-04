@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <title>Gerenciador Funcionario</title>
+        <title>Gerenciador Animal</title>
         <meta content="" name="description">
         <meta content="" name="keywords">
  
@@ -60,7 +60,7 @@
         <!-- End Header -->
         <br><br><br><br>
 
-       
+        <div class="content">
             <div class="button-container">
                 <button onclick="voltar()">Voltar</button>
                 <button onclick="criarNovoUsuario()">Criar Novo</button>
@@ -69,113 +69,141 @@
   
             <thead> 
               <tr>
-                  <th>Nome</th>
-                  <th>Nome Usuário</th>
-                  <th>CPF</th>	
-                  <th>Senha</th>	
-                  <th>Confirmar Senha</th>	
-                  <th>Data de Nascimento</th>	
-                  <th>Email</th>	
-                  <th>Telefone</th>	
-                  <th>Cargo</th>	
+                  <th>Doc. Identificação</th>
+                  <th>Data-Hora</th>
+                  <th>Resp. Entrega</th>	
+                  <th>Tipo Entrega</th>	
+                  <th>Nome Animal</th>	
+                  <th>Nome Científico</th>	
+                  <th>Sexo</th>	
+                  <th>Onde foi Encontrado?</th>	
+                  <th>Tempo Cativeiro</th>	
+                  <th>Estado de Saúde</th>
+                  <th>Número Registro</th>
+                  <th>Obs Animal</th>
+                  <th>Entregue</th>
+                  <th>Recebido</th>
                   <th>Ações</th>
               </tr>
             </thead>
             
             <tbody> 
                 <tr>
-                  <td>Leonardo Paixão Silva</td>	
-                  <td>leopxz</td>
                   <td>11234567894</td>	
-                  <td>12345678</td>	
-                  <td>12345678</td>	
-                  <td>03/11/1994</td>	
-                  <td>leopx@gmail.com</td>	
-                  <td>81998345678</td>	
-                  <td>Agente ambiental</td>	
-                
-                  <td> <button onclick="editarUsuario()">Editar</button>
-                    <button onclick="deletarUsuario()">Deletar</button></td>
-                </tr>
-                <tr> 
-                  <td>Hugo Correia Silva</td>
-                    <td>hugo03</td>
-                    <td>78901234567</td>
-                    <td>senha123</td>
-                    <td>senha123</td>
-                    <td>02/10/1993</td>
-                    <td>hugocpx3@gmail.com</td>
-                    <td>81998345678</td>
-                    <td>Agente Florestal</td>	
-               
+                  <td>03/12/2023 12:00</td>
+                  <td>IBAMA</td>	
+                  <td>Voluntária</td>	
+                  <td>Capivara</td>	
+                  <td>Hydrochoerus hydrochaeris</td>	
+                  <td>Macho</td>	
+                  <td>Parque jaqueira</td>	
+                  <td>Indefinido</td>	
+                  <td>Regular</td> 
+                  <td>1</td>	
+                  <td>Encontrado atropelado.</td>	
+                  <td>Leonardo Paixão</td>	
+                  <td>Jessica Maria</td> 
                   <td> <button onclick="editarUsuario()">Editar</button>
                     <button onclick="deletarUsuario()">Deletar</button></td>
                 </tr>
                 <tr>
-                    <td>Amanda Paula</td>
-                    <td>amandap</td>
-                    <td>34567890123</td>
-                    <td>56789012</td>
-                    <td>56789012</td>
-                    <td>05/11/1995</td>
-                    <td>amandap@gmail.com</td>
-                    <td>81998322468</td>
-                    <td>Agente ambiental</td>
-                    	
-             
-                  <td> <button onclick="editarUsuario()">Editar</button>
-                    <button onclick="deletarUsuario()">Deletar</button></td>
-                </tr>
-                <tr>
-                    <td>Lucas Paulo</td>
-                    <td>lucasp</td>
-                    <td>45678901234</td>
-                    <td>34567890</td>
-                    <td>34567890</td>
-                    <td>28/09/1999</td>
-                    <td>lucasp@gmail.com</td>
-                    <td>8199275678</td>
-                    <td>Agente ambiental</td>
+                    <td>11223344556</td>
+                    <td>03/12/2023 13:30</td>
+                    <td>CIPOMA</td>
+                    <td>Voluntária</td>
+                    <td>Raposa</td>
+                    <td>Vulpes vulpes</td>
+                    <td>Femêa</td>
+                    <td>Bosque das Araucárias</td>
+                    <td>6 dias</td>
+                    <td>Saudável</td>
+                    <td>2</td>
+                    <td>Encontrado próximo a uma área urbana.</td>
+                    <td>Antonio marcio</td>
+                    <td>Maria Clara</td>
                     
-                
                   <td> <button onclick="editarUsuario()">Editar</button>
                     <button onclick="deletarUsuario()">Deletar</button></td>
                 </tr>
                 <tr>
-                    <td>Evysson Ferreira</td>
-                    <td>evysson</td>
-                    <td>98765432109</td>
-                    <td>87654321</td>
-                    <td>87654321</td>
-                    <td>21/08/1994</td>
-                    <td>evysson@gmail.com</td>
-                    <td>8199275613</td>
-                    <td>Área Ambiental</td>	
-               
+                    <td>11223344557</td>
+                    <td>03/12/2023 14:45</td>
+                    <td>CIPOMA</td>
+                    <td>Resgate</td>
+                    <td>Tamanduá Bandeira</td>
+                    <td>Myrmecophaga tridactyla</td>
+                    <td>Macho</td>
+                    <td>Sitio da Trindade</td>
+                    <td> 3 dias</td>
+                    <td>Saudável</td>
+                    <td>3 </td>
+                    <td>Resgatado de uma propriedade rural.</td>
+                    <td>Amanda Paula</td>
+                    <td>Lucas Paulo</td>
                   <td> <button onclick="editarUsuario()">Editar</button>
                     <button onclick="deletarUsuario()">Deletar</button></td>
                 </tr>
                 <tr>
-                    <td>Felipe Silva</td>
-                    <td>felipexs</td>
-                    <td>12345678901</td>
-                    <td>12345678</td>
-                    <td>12345678</td>
-                    <td>15/03/1990</td>
-                    <td>felipe@gmail.com</td>
-                    <td>81991234567</td>
-                    <td>Área Ambiental</td>
-                
+                    <td>11223344558</td>
+                    <td>03/12/2023 16:00</td>
+                    <td>DEPOMA</td>
+                    <td>Resgate</td>
+                    <td>Mico-Leão-Dourado</td>
+                    <td>Leontopithecus rosalia</td>
+                    <td>Macho</td>
+                    <td>Parque caiara</td>
+                    <td>4 meses</td>
+                    <td>Regular</td>
+                    <td>4</td>
+                    <td>Encontrado em uma área de construção.</td>
+                    <td>Hugo Correia</td>
+                    <td>ALberico José</td>
                   <td> <button onclick="editarUsuario()">Editar</button>
                     <button onclick="deletarUsuario()">Deletar</button></td>
                 </tr>
-             
-               
+                <tr>
+                    <td>11223344559</td>
+                    <td>03/12/2023 17:15</td>
+                    <td>IBAMA</td>
+                    <td>Apreensão</td>
+                    <td>Papagaio</td>
+                    <td>Psittacidae</td>
+                    <td>Femêa</td>
+                    <td>em um caminhão</td>
+                    <td>Indefinido</td>
+                    <td>Cuidados Médicos</td>
+                    <td>5</td>
+                    <td>Não consegue voar.</td>
+                    <td>Lucas Paulo</td>
+                    <td>Geraldo paulo</td>
+                  <td> <button onclick="editarUsuario()">Editar</button>
+                    <button onclick="deletarUsuario()">Deletar</button></td>
+                </tr>
+                <tr>
+                    <td>11223344560</td>
+                    <td>03/12/2023 18:30</td>
+                    <td>IBAMA</td>
+                    <td>Resgate</td>
+                    <td>Bicho Preguiça</td>
+                    <td>Folivora</td>
+                    <td>Macho</td>
+                    <td>Área rural</td>
+                    <td>4 dias</td>
+                    <td>Regular</td>
+                    <td>6</td>
+                    <td>Encontrado em um parque.</td>
+                    <td>Gloria Farias</td>
+                    <td>Paula Marques</td>
+                  <td> <button onclick="editarUsuario()">Editar</button>
+                    <button onclick="deletarUsuario()">Deletar</button></td>
+                </tr>
+                
           
             </tbody>
             
           </table>
-                 
+  
+        
         
 
             <!-- Vendor JS Files -->

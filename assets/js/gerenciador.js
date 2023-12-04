@@ -1,15 +1,23 @@
-
-function editarUsuario() {
-    // Implemente a lógica para editar um usuário aqui
-    alert("Editar usuário");
+function voltar() {
+    window.history.back();
 }
 
-function deletarUsuario() {
-    // Implemente a lógica para deletar um usuário aqui
-    alert("Deletar usuário");
+function criarNovoUsuario() {
+    // Lógica para criar um novo usuário
+
+    console.log("Função para criar novo usuário.");
 }
 
-function criarUsuario() {
-    // Implemente a lógica para criar um novo usuário aqui
-    alert("Criar novo usuário");
-}
+
+            function irParaGerenciador() {
+                window.location.href = "gerenciador.html";
+            }
+    
+            function irParaGerenciadorAnimal() {
+                window.location.href = "gerenciadorAnimal.html";
+            }
+
+            function irParaGerenciadorAnimal() {
+                window.location.href = "gerenciadorChamado.html";
+            }
+   
