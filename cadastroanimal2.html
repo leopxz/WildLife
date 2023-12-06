@@ -96,10 +96,12 @@
 
       <!-- Formulário de informações sobre o animal-->
         <h2><strong>Registro do Animal</strong></h2><br>
+      
         <div class="registration">
-          
+
           <form id="meuFormulario" onsubmit="salvarInformacoes(event)">
-          
+            
+           
             <label for="docIdentificacao">Documento de Identificação:</label>
             <input type="text" id="docIdentificacao" name="docIdentificacao" placeholder="Digite seu CPF" required>
                 <br>
@@ -120,10 +122,10 @@
     
             <label for="tipoEntrega">Tipo de Entrega:</label>
             <select id="tipoEntrega" name="tipoEntrega">
-                  <option value="voluntaria">Voluntária</option>
-                  <option value="resgate">Resgate</option>
-                  <option value="apreensao">Apreensão</option>
-                  <option value="outross">Outros</option>
+                  <option value="VOLUNTARIA">Voluntária</option>
+                  <option value="RESGATE">Resgate</option>
+                  <option value="APREENSAO">Apreensão</option>
+                  <option value="OUTROS">Outros</option>
             </select>
                 <br>
     
@@ -136,8 +138,8 @@
     
             <label for="sexo">Sexo:</label>
             <select id="sexo" name="sexo">
-                <option value="macho">Macho</option>
-                <option value="femea">Fêmea</option>
+                <option value="MACHO">Macho</option>
+                <option value="FEMEA">Fêmea</option>
             </select>
                 <br> 
     
@@ -176,10 +178,9 @@
             <label for="recebidoPor">Recebido Por:</label>
             <input type="text" id="recebidoPor" name="recebidoPor" placeholder="Acolhido por">
                 <br>
-    
-            <div style="text-align: right;">
-              <button type="submit">Cadastrar</button>
                 
+              <div style="text-align: right;">
+                <button type="submit" > Cadastrar</button> 
           </div>
         </form>
       </div>
